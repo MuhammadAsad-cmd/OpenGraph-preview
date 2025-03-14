@@ -1,4 +1,5 @@
 import PreviewIcon from "@/icons/PreviewIcon";
+import Image from "next/image";
 import React from "react";
 
 const OpenGraphPreview = () => {
@@ -17,21 +18,23 @@ const OpenGraphPreview = () => {
 
           <div className="flex flex-col space-y-4 md:space-y-0">
             {/* Facebook Preview */}
-            <div className="m-2 w-full">
+            <div className="w-full">
               <h3 className="mb-2 font-medium text-stone-900 uppercase">
                 Facebook
               </h3>
-              <div className="max-w-full cursor-pointer font-sans lg:w-[524px]">
-                <div className="border border-gray-300 bg-cover bg-center">
-                  <div className="relative w-full pt-[52.5%]">
-                    <img
-                      className="absolute top-0 block h-full w-full object-cover"
+              <div className="w-full cursor-pointer font-sans">
+                <div className="rounded-md border border-gray-300">
+                  <div className="w-full">
+                    <Image
+                      width={300}
+                      height={300}
+                      className="block h-full w-full rounded-t-md object-cover"
                       src="/images/meta.png"
                       alt="Facebook Preview"
                     />
                   </div>
                 </div>
-                <div className="border border-gray-300 bg-gray-100 px-3 py-2 break-words antialiased">
+                <div className="rounded-b-md border border-gray-300 bg-gray-100 px-3 py-2 break-words antialiased">
                   <div className="truncate text-xs leading-4 text-gray-600 uppercase">
                     asad-portfolio-ai.vercel.app
                   </div>
@@ -48,15 +51,17 @@ const OpenGraphPreview = () => {
             </div>
 
             {/* Twitter (X) Preview */}
-            <div className="m-2 w-full">
+            <div className="mt-2 w-full">
               <h3 className="mb-2 font-medium text-stone-900 uppercase">
                 X (formerly Twitter)
               </h3>
-              <div className="relative max-w-full cursor-pointer overflow-hidden rounded-lg border border-gray-300 font-sans text-black lg:w-[438px]">
+              <div className="relative max-w-full cursor-pointer overflow-hidden rounded-lg border border-gray-300 font-sans text-black">
                 <div className="bg-cover bg-center">
-                  <div className="relative w-full pt-[52.5%]">
-                    <img
-                      className="absolute top-0 block h-full w-full object-cover"
+                  <div className="w-full">
+                    <Image
+                      width={300}
+                      height={300}
+                      className="h-full w-full object-cover"
                       src="/images/meta.png"
                       alt="Twitter Preview"
                     />
@@ -69,15 +74,17 @@ const OpenGraphPreview = () => {
             </div>
 
             {/* LinkedIn Preview */}
-            <div className="m-2 w-full">
+            <div className="mt-2 w-full">
               <h3 className="mb-2 font-medium text-stone-900 uppercase">
                 LinkedIn
               </h3>
-              <div className="max-w-full cursor-pointer overflow-hidden rounded-md border border-gray-300 shadow-md lg:w-[520px]">
+              <div className="max-w-full cursor-pointer overflow-hidden rounded-md border border-gray-300 shadow-md">
                 <div className="bg-cover bg-center">
-                  <div className="relative w-full pt-[52.5%]">
-                    <img
-                      className="absolute top-0 block h-full w-full object-cover"
+                  <div className="w-full">
+                    <Image
+                      width={300}
+                      height={300}
+                      className="h-full w-full object-cover"
                       src="/images/meta.png"
                       alt="LinkedIn Preview"
                     />
@@ -95,11 +102,11 @@ const OpenGraphPreview = () => {
             </div>
 
             {/* Discord Preview */}
-            <div className="m-2 w-full">
+            <div className="mt-2 w-full">
               <h3 className="mb-2 font-medium text-stone-900 uppercase">
                 Discord
               </h3>
-              <div className="grid max-w-full cursor-pointer items-start overflow-hidden rounded-md border-l-4 border-gray-800 bg-gray-800 font-sans text-white lg:w-[432px]">
+              <div className="grid max-w-full cursor-pointer items-start overflow-hidden rounded-md border-l-4 border-gray-800 bg-gray-800 font-sans text-white">
                 <div className="p-4">
                   <div className="text-xs font-normal">
                     Muhammad Asad Portfolio
@@ -113,7 +120,9 @@ const OpenGraphPreview = () => {
                     intuitive user interfaces.
                   </div>
                   <div className="mt-4 overflow-hidden rounded">
-                    <img
+                    <Image
+                      width={300}
+                      height={300}
                       src="/images/meta.png"
                       alt="Discord Preview"
                       className="block w-full"

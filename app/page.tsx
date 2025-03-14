@@ -46,9 +46,9 @@ const Home = () => {
             </div>
           </div>
           <div className="max-w-container mx-auto space-y-10 px-4 py-12 sm:space-y-12 sm:px-6 lg:space-y-16 lg:px-8 lg:py-20">
-            <div className="relative grid grid-cols-1 grid-rows-1 gap-y-8 lg:grid-cols-2 lg:gap-x-8 xl:grid-cols-3 xl:gap-x-8">
-              <div className="col-span-1 col-start-1 xl:col-span-2">
-                <div className="grid grid-cols-1 gap-y-8 lg:gap-x-8 xl:grid-cols-2 xl:gap-x-8">
+            <div className="relative grid grid-cols-1 grid-rows-1 gap-y-8 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 xl:gap-x-8">
+              <div className="col-span-1 col-start-1 lg:col-span-2">
+                <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:gap-x-8 xl:gap-x-8">
                   <MetadataEditor />
                   <CopyButton />
                 </div>

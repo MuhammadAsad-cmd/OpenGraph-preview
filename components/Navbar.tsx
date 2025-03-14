@@ -6,9 +6,9 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <header className="sticky inset-x-0 top-[-1px] z-50  duration-200 ease-in shadow-lg bg-[#36169a]">
+      <header className="sticky inset-x-0 top-[-1px] z-50 bg-[#36169a] shadow-lg duration-200 ease-in">
         <div className="relative">
-          <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-4 sm:px-6 md:px-8">
+          <div className="max-w-8xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 md:px-8">
             <div className="flex px-2 md:px-0">
               <Link href="/">
                 <span className="sr-only">OpenGraph</span>
@@ -17,7 +17,7 @@ const Navbar = () => {
                     width={64}
                     height={64}
                     alt="OpenGraph"
-                    className="absolute inset-0 object-contain p-1 h-full w-full text-transparent"
+                    className="absolute inset-0 h-full w-full object-contain p-1 text-transparent"
                     src="/images/logo.svg"
                   />
                 </div>
@@ -25,7 +25,7 @@ const Navbar = () => {
             </div>
             <div className="-my-2 -mr-2 flex md:hidden">
               <button
-                className="inline-flex items-center justify-center rounded-md p-2 transition cursor-pointer duration-150 focus:outline-none  text-white hover:bg-[#FAFAFA40] hover:bg-opacity-25 hover:text-white focus:text-white"
+                className="hover:bg-opacity-25 inline-flex cursor-pointer items-center justify-center rounded-md p-2 text-white transition duration-150 hover:bg-[#FAFAFA40] hover:text-white focus:text-white focus:outline-none"
                 type="button"
               >
                 <span className="sr-only">Open menu</span>
@@ -34,50 +34,14 @@ const Navbar = () => {
             </div>
             <nav className="hidden md:flex md:flex-row md:items-center md:gap-4">
               <Link
-                className="whitespace-nowrap text-base font-medium  text-white hover:text-white"
-                href="#"
-              >
-                Product
-              </Link>
-              <Link
-                className="whitespace-nowrap text-base font-medium  text-white hover:text-white"
-                href="#"
-              >
-                Pricing
-              </Link>
-              <Link
-                className="whitespace-nowrap text-base font-medium  text-white hover:text-white"
-                href="#"
-              >
-                About
-              </Link>
-              <Link
-                className="whitespace-nowrap text-base font-medium  text-white hover:text-white"
-                href="#"
-              >
-                Blog
-              </Link>
-              <Link
-                className="whitespace-nowrap text-base font-medium  text-white hover:text-white"
-                href="#"
-              >
-                Inspiration
-              </Link>
-              <Link
-                className="whitespace-nowrap text-base font-medium  text-white hover:text-white"
-                href="#"
-              >
-                FAQ
-              </Link>
-              <Link
-                className="whitespace-nowrap text-base font-medium text-white hover:text-white"
+                className="text-base font-medium whitespace-nowrap text-white hover:text-white"
                 rel="noreferrer"
                 href="https://opengraph.enter.nl/login"
               >
                 Sign in
               </Link>
               <Link
-                className="bg-white hover:bg-opacity-90 shadow-sm py-[10px] px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                className="hover:bg-opacity-90 rounded-md bg-white px-3 py-[10px] shadow-sm focus:ring-2 focus:ring-offset-2 focus:outline-none"
                 href="https://opengraph.enter.nl/register"
               >
                 Get Started
@@ -85,7 +49,7 @@ const Navbar = () => {
             </nav>
           </div>
         </div>
-        <div className="fixed top-px left-px w-px h-0 p-0 m-[-1px] overflow-hidden clip-rect text-nowrap border-0 hidden"></div>
+        <div className="clip-rect fixed top-px left-px m-[-1px] hidden h-0 w-px overflow-hidden border-0 p-0 text-nowrap"></div>
       </header>
     </>
   );
