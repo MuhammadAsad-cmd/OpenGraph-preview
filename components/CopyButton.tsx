@@ -1,8 +1,32 @@
 import CopyIcon from "@/icons/CopyIcon";
 import CopytoClip from "@/icons/CopytoClip";
 import React from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { html } from "@codemirror/lang-html";
+import { dracula } from "@uiw/codemirror-theme-dracula";
 
-const CopyButton = () => {
+const CopyButton = ({metaData}:any) => {
+  const code = `<!-- HTML Meta Tags -->
+  <title>${metaData?.title}</title>
+  <meta name="description" content="${metaData?.description}">
+  
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="${metaData?.ogUrl}">
+  <meta property="og:type" content="${metaData?.ogType}">
+  <meta property="og:title" content="${metaData?.ogTitle}">
+  <meta property="og:description" content="${metaData?.ogDescription}">
+  <meta property="og:image" content="${metaData?.ogImage}">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="${metaData?.twitterCard}">
+  <meta property="twitter:domain" content="${metaData?.twitterDomain}">
+  <meta property="twitter:url" content="${metaData?.twitterUrl}">
+  <meta name="twitter:title" content="${metaData?.twitterTitle}">
+  <meta name="twitter:description" content="${metaData?.twitterDescription}">
+  <meta name="twitter:image" content="${metaData?.twitterImage}">
+  
+  <!-- Meta Tags Generated via https://open-graph-preview-gamma.vercel.app -->`;
+  
   return (
     <>
       <div className="rounded-2xl border border-solid border-gray-200 bg-white px-4 py-6 text-left shadow-sm transition duration-200 ease-in-out hover:shadow-lg focus:shadow-lg sm:px-6 sm:py-8">
@@ -31,151 +55,28 @@ const CopyButton = () => {
         <div className="mt-4 text-sm">
           <div className="w-full overflow-auto rounded-md bg-[#2a2734] p-4">
             <pre className="bg-[#2A2734] text-[#9A86FD]">
-              <div className="table-row text-[#9A86FD]">
-                <span
-                  className="line-number w-8 text-right text-[#858585]"
-                  data-line-number="1"
-                >
-                  1
-                </span>
-                <span className="table-cell">
-                  <span className="token operator text-[#E09142]">&lt;</span>
-                  <span className="token operator text-[#E09142]">!</span>
-                  <span className="token operator text-[#E09142]">--</span>
-                  <span className="token plain"> </span>
-                  <span className="token constant">HTML</span>
-                  <span className="token plain"> </span>
-                  <span className="token maybe-className-name">Meta</span>
-                  <span className="token plain"> </span>
-                  <span className="token maybe-className-name">Tags</span>
-                  <span className="token plain"> </span>
-                  <span className="token operator text-[#E09142]">--</span>
-                  <span className="token operator text-[#E09142]">&gt;</span>
-                  <span className="token plain"></span>
-                </span>
-              </div>
-
-              <div className="table-row text-[#9A86FD]">
-                <span
-                  className="line-number pr-4 text-right text-[#858585]"
-                  data-line-number="2"
-                >
-                  2
-                </span>
-                <span className="table-cell">
-                  <span className="token tag punctuation text-[#6C6783]">
-                    &lt;
-                  </span>
-                  <span className="token tag text-[#E09142]">title</span>
-                  <span className="token tag punctuation text-[#6C6783]">
-                    &gt;
-                  </span>
-                  <span className="token plain-text">
-                    Muhammad Asad - Front End Developer
-                  </span>
-                  <span className="token tag punctuation text-[#6C6783]">
-                    &lt;/
-                  </span>
-                  <span className="token tag text-[#E09142]">title</span>
-                  <span className="token tag punctuation text-[#6C6783]">
-                    &gt;
-                  </span>
-                </span>
-              </div>
-              <div className="table-row text-[#9A86FD]">
-                <span
-                  className="line-number table-cell"
-                  data-line-number="3"
-                ></span>
-                <span className="table-cell">
-                  <span className="token plain"></span>
-                  <span className="token tag punctuation text-[#6C6783]">
-                    &lt;
-                  </span>
-                  <span className="token tag text-[#E09142]">meta</span>
-                  <span className="token tag text-[#E09142]"> </span>
-                  <span className="token tag attr-name text-[#C4B9FE]">
-                    name
-                  </span>
-                  <span className="token tag attr-value punctuation attr-equals text-[#6C6783]">
-                    =
-                  </span>
-                  <span className="token tag attr-value punctuation text-[#6C6783]">
-                    "
-                  </span>
-                  <span className="token tag attr-value text-[#FFCC99]">
-                    description
-                  </span>
-                  <span className="token tag attr-value punctuation text-[#6C6783]">
-                    "
-                  </span>
-                  <span className="token tag text-[#E09142]"> </span>
-                  <span className="token tag attr-name text-[#C4B9FE]">
-                    content
-                  </span>
-                  <span className="token tag attr-value punctuation attr-equals text-[#6C6783]">
-                    =
-                  </span>
-                  <span className="token tag attr-value punctuation text-[#6C6783]">
-                    "
-                  </span>
-                  <span className="token tag attr-value text-[#FFCC99]">
-                    Showcasing the work of Muhammad Asad, a web developer
-                    passionate about creating cutting-edge digital solutions and
-                    intuitive user interfaces.
-                  </span>
-                  <span className="token tag attr-value punctuation text-[#6C6783]">
-                    "
-                  </span>
-                  <span className="token tag punctuation text-[#6C6783]">
-                    &gt;
-                  </span>
-                  <span className="token plain-text"></span>
-                </span>
-              </div>
-
-              <div className="table-row text-[#9A86FD]">
-                <span
-                  className="line-number w-8 pr-4 text-right text-[#858585]"
-                  data-line-number="3"
-                >
-                  3
-                </span>
-                <span className="table-cell">
-                  <span className="token plain-text"></span>
-                </span>
-              </div>
-
-              <div className="table-row text-[#9A86FD]">
-                <span
-                  className="line-number w-8 pr-4 text-right text-[#858585]"
-                  data-line-number="4"
-                >
-                  4
-                </span>
-                <span className="table-cell">
-                  <span className="token operator text-[#E09142]">&lt;</span>
-                  <span className="token operator text-[#E09142]">!</span>
-                  <span className="token operator text-[#E09142]">--</span>
-                  <span className="token plain"> </span>
-                  <span className="token constant">Facebook</span>
-                  <span className="token plain"> </span>
-                  <span className="token maybe-className-name">Meta</span>
-                  <span className="token plain"> </span>
-                  <span className="token maybe-className-name">Tags</span>
-                  <span className="token plain"> </span>
-                  <span className="token operator text-[#E09142]">--</span>
-                  <span className="token operator text-[#E09142]">&gt;</span>
-                </span>
-              </div>
+            
+    
             </pre>
+            <div className="w-full max-w-2xl mx-auto mt-5 shadow-lg rounded-md">
+      <CodeMirror
+        value={code}
+        extensions={[html()]}
+        theme={dracula} // Dark theme
+        readOnly={true} // Makes it non-editable
+        basicSetup={{
+          lineNumbers: true,
+          highlightActiveLine: false,
+        }}
+      />
+    </div>
           </div>
           <div className="mt-4">
             {/* <button className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
              <CopiedIcon/>
               <span>Copied</span>
             </button> */}
-            <button className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
+            <button onClick={(e)=>window.navigator.clipboard.writeText(code)} className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
               <CopytoClip />
               <span>Copy To Clipboard</span>
             </button>
