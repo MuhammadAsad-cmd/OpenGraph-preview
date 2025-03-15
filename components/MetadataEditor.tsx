@@ -3,7 +3,7 @@ import UploadIcon from "@/icons/UploadIcon";
 import Image from "next/image";
 import React from "react";
 
-const MetadataEditor = () => {
+const MetadataEditor = ({metaData,setMetaData}:any) => {
   return (
     <>
       <div className="rounded-2xl border border-solid border-gray-200 bg-white px-4 py-6 text-left shadow-sm transition duration-200 ease-in-out hover:shadow-lg focus:shadow-lg sm:px-6 sm:py-8">
@@ -30,6 +30,8 @@ const MetadataEditor = () => {
                 className="focus:ring-indigborder-indigo-500 block w-full rounded-md border border-[#D1D5DB] px-3 py-2 shadow-sm transition duration-300 ease-in-out outline-none hover:border-indigo-500 focus:border-indigo-500 focus:ring"
                 type="text"
                 placeholder="Muhammad Asad - Front End Developer"
+                value={metaData?.title}
+                onChange={(e)=>setMetaData((pre:any)=>({...pre,title:e.target.value}))}
               />
             </div>
             <p className="mt-2 text-sm text-stone-500" id="email-description">
@@ -51,6 +53,9 @@ const MetadataEditor = () => {
                 placeholder="Showcasing the work of Muhammad Asad, a web developer
                     passionate about creating cutting-edge digital solutions and
                     intuitive user interfaces."
+                    value={metaData?.description}
+                    onChange={(e)=>setMetaData((pre:any)=>({...pre,description:e.target.value}))}
+
               ></textarea>
             </div>
             <p className="mt-2 text-sm text-stone-500" id="email-description">
@@ -70,7 +75,7 @@ const MetadataEditor = () => {
               width={48}
               height={48}
               className="block h-12 w-12 rounded-md object-cover"
-              src="/images/meta.png"
+              src={metaData?.ogImage??"/images/meta.png"}
               alt="img"
             />
             <button className="flex w-full cursor-pointer items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
