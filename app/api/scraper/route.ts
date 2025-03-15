@@ -46,8 +46,8 @@ export async function GET( req: Request) {
               status: 200,
             })
     } catch (error) {
-        console.error("Error fetching metadata:", error?.message);
-        return NextResponse.json({ error: error?.message??"Failed to fetch metadata" },
+        // console.error("Error fetching metadata:", error?.message);
+        return NextResponse.json({ error:"Failed to fetch metadata" },
             {
               status: 500,
             })
