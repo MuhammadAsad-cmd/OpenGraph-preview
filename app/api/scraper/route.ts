@@ -6,9 +6,8 @@ export async function GET( req: Request) {
    
 
     try {
-        const searchParams = req?.nextUrl?.searchParams
-        const url = searchParams.get('url')
-        console.log({url},"asvdfkasdfasdfa");
+        const searchParams = new URL(req.url).searchParams;
+        const url = searchParams.get("url");
         
 
         if (!url) {
@@ -46,12 +45,20 @@ export async function GET( req: Request) {
             {
               status: 200,
             })
-    } catch (error) {
-        console.error("Error fetching metadata:", error?.message);
-        return NextResponse.json({ error: error?.message??"Failed to fetch metadata" },
-            {
-              status: 500,
-            })
+    } catch (error: unknown) {
+        let errorMessage = "Failed to fetch metadata";
+    
+        if (error instanceof Error) {
+            errorMessage = error.message;
+        } else if (typeof error === "string") {
+            errorMessage = error;
+        } else if (typeof error === "object" && error !== null && "message" in error) {
+            errorMessage = String(error.message);
+        }
+    
+    
+        return NextResponse.json({ error: errorMessage }, { status: 500 });
     }
+    
 }
 
